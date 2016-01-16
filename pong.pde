@@ -27,7 +27,7 @@ void setup() {
 };
 
 void draw() {
-    // Background color... RGB
+    Background color... RGB
     background: -moz-linear-gradient( top ,
         rgba(255, 0, 0, 1) 0%,
         rgba(255, 255, 0, 1) 15%,
