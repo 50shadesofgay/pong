@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="pong.js"></script>
+  </head>
+  <body></body>
+</html>
+
+var animate = window.requestAnimationFrame 
+  window.webkitRequestAinmationFrame
+  window.mozRequestAnimationFrame
+  function(callback) { window.setTimeout(callback, 1000/60) };
+  
+var canvas = document.createElement('canvas');
+var width = 400;
+var height = 600;
+canvas.width = width;
+canvas.height = height;
+var context = canvas.getContext9'2d');
