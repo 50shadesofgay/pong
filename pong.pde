@@ -6,7 +6,7 @@ float ball_size = 26;  // Radius of ball
 float dy = 2;  // Change in y
 
 // Global variables for the paddle
-var paddle_width = 10;
+var paddle_width = 20;
 var paddle_height = 60;
 
 var dist_wall = 2;
@@ -31,7 +31,7 @@ void draw() {
     background(153, 51, 255);
 
     // Increment x and y by speed of ball
-    ball_x += ball_dir * 16.0;
+    ball_x += ball_dir * 10.0;
     ball_y += dy;
 
     // If the ball was missed... start over
