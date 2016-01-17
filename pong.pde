@@ -1,23 +1,23 @@
-// Global variables for the ball
+/ Global variables for the ball
 float ball_x;
 float ball_y;
-float ball_dir = 10; // Direction in x 
-float ball_size = 35;  // Radius of ball
+float ball_dir = 1; // Direction in x 
+float ball_size = 7;  // Radius of ball
 float dy = 2;  // Change in y
 
 // Global variables for the paddle
-var paddle_width = 20;
-var paddle_height = 80;
+var paddle_width = 5;
+var paddle_height = 40;
 
-var dist_wall = 2;
+var dist_wall = 8;
 
 // Adding total hits here...
-float total = 0;
+//float total = 0;
 float highscore = 0;
 float score = 0;
 
 void setup() {
-    size(600, 500);
+    size(600, 400);
     rectMode(CENTER_RADIUS);
     ellipseMode(CENTER_RADIUS);
     noStroke();
@@ -28,10 +28,10 @@ void setup() {
 
 void draw() {
     // Background color... RGB
-    background(204, 184, 224);
+    background(155,0,0);
 
     // Increment x and y by speed of ball
-    ball_x += ball_dir * 10.0;
+    ball_x += ball_dir * 6.0;
     ball_y += dy;
 
     // If the ball was missed... start over
@@ -60,8 +60,8 @@ void draw() {
         document.getElementById("score").innerHTML = "Score = " + score;
 
         // Adding in the total hits here...
-        total += 1;
-        document.getElementById("total").innerHTML = "Total Hits = " + total;
+        //total += 1;
+        //document.getElementById("total").innerHTML = "Total Hits = " + total;
 
         if (score>highscore) {
           highscore = score;
@@ -69,7 +69,7 @@ void draw() {
         }
         // Check to see if the mouse is moving... if so calculate how fast
         if(mouseY != pmouseY) {
-            dy = (mouseY-pmouseY)/1.0;
+            dy = (mouseY-pmouseY)/2.0;
             // Clamp how fast it can move the paddle to 5
             if(dy >  5) { dy =  5; }
             if(dy < -5) { dy = -5; }
@@ -89,10 +89,10 @@ void draw() {
     }
 
     // Draw ball
-    fill(0,0,0);
+    fill(0,0,255);
     ellipse(ball_x, ball_y, ball_size, ball_size);
 
     // Draw the paddle
-    fill(115, 0, 230);
+    fill(255,255,255);
     rect(width-dist_wall, paddle_y, paddle_width, paddle_height);  
 };
