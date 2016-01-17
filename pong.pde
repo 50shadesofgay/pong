@@ -69,7 +69,7 @@ void draw() {
         }
         // Check to see if the mouse is moving... if so calculate how fast
         if(mouseY != pmouseY) {
-            dy = (mouseY-pmouseY)/10.0;
+            dy = (mouseY-pmouseY)/2.0;
             // Clamp how fast it can move the paddle to 5
             if(dy >  5) { dy =  5; }
             if(dy < -5) { dy = -5; }
