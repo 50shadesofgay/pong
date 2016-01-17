@@ -2,22 +2,22 @@
 float ball_x;
 float ball_y;
 float ball_dir = 1; // Direction in x 
-float ball_size = 30;  // Radius of ball
+float ball_size = 7;  // Radius of ball
 float dy = 2;  // Change in y
 
 // Global variables for the paddle
-var paddle_width = 10;
-var paddle_height = 60;
+var paddle_width = 5;
+var paddle_height = 40;
 
 var dist_wall = 8;
 
 // Adding total hits here...
-float total = 0;
+//float total = 0;
 float highscore = 0;
 float score = 0;
 
 void setup() {
-    size(800, 500);
+    size(600, 400);
     rectMode(CENTER_RADIUS);
     ellipseMode(CENTER_RADIUS);
     noStroke();
@@ -27,28 +27,11 @@ void setup() {
 };
 
 void draw() {
-    Background color... RGB
-    background: -moz-linear-gradient( top ,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 255, 0, 1) 15%,
-        rgba(0, 255, 0, 1) 30%,
-        rgba(0, 255, 255, 1) 50%,
-        rgba(0, 0, 255, 1) 65%,
-        rgba(255, 0, 255, 1) 80%,
-        rgba(255, 0, 0, 1) 100%);
-    background: -webkit-gradient(linear,  left top,  left bottom, 
-        color-stop(0%, rgba(255, 0, 0, 1)), 
-        color-stop(15%, rgba(255, 255, 0, 1)),
-        color-stop(30%, rgba(0, 255, 0, 1)),
-        color-stop(50%, rgba(0, 255, 255, 1)),
-        color-stop(65%, rgba(0, 0, 255, 1)),
-        color-stop(80%, rgba(255, 0, 255, 1)),
-        color-stop(100%, rgba(255, 0, 0, 1)));
-}
-
+    // Background color... RGB
+    background(155,0,0);
 
     // Increment x and y by speed of ball
-    ball_x += ball_dir * 16.0;
+    ball_x += ball_dir * 6.0;
     ball_y += dy;
 
     // If the ball was missed... start over
@@ -77,8 +60,8 @@ void draw() {
         document.getElementById("score").innerHTML = "Score = " + score;
 
         // Adding in the total hits here...
-        total += 1;
-        document.getElementById("total").innerHTML = "Total Hits = " + total;
+        //total += 1;
+        //document.getElementById("total").innerHTML = "Total Hits = " + total;
 
         if (score>highscore) {
           highscore = score;
@@ -106,10 +89,10 @@ void draw() {
     }
 
     // Draw ball
-    fill(0, 153, 51);
+    fill(0,0,255);
     ellipse(ball_x, ball_y, ball_size, ball_size);
 
     // Draw the paddle
-    fill(255, 51, 153);
+    fill(255,255,255);
     rect(width-dist_wall, paddle_y, paddle_width, paddle_height);  
 };
