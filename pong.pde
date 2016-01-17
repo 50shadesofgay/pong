@@ -1,7 +1,7 @@
 // Global variables for the ball
 float ball_x;
 float ball_y;
-float ball_dir = 1; // Direction in x 
+float ball_dir = 10; // Direction in x 
 float ball_size = 35;  // Radius of ball
 float dy = 2;  // Change in y
 
